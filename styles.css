@@ -4,22 +4,27 @@
 }
 
 .flow-container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    animation: fadeIn 2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: white;
 }
 
 .flow-title {
     font-size: 3em;
-    color: #333;
     animation: slideInFromTop 2s;
+    color: white;
 }
 
 .flow-subtitle {
     font-size: 1.2em;
-    color: #666;
     animation: slideInFromBottom 2s;
+    color: white;
 }
 
 .flow-button {
@@ -48,3 +53,21 @@
     50% { box-shadow: 0 0 0 10px rgba(68, 170, 80, 0); }
     100% { box-shadow: 0 0 0 0px rgba(68, 170, 80, 0); }
 }
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
