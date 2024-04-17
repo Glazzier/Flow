@@ -1,0 +1,50 @@
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.flow-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+
+.flow-title {
+    font-size: 3em;
+    color: #333;
+    animation: slideInFromTop 2s;
+}
+
+.flow-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    animation: slideInFromBottom 2s;
+}
+
+.flow-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes slideInFromTop {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes slideInFromBottom {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0px rgba(68, 170, 80, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(68, 170, 80, 0); }
+    100% { box-shadow: 0 0 0 0px rgba(68, 170, 80, 0); }
+}
