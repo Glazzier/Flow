@@ -8,49 +8,6 @@
     }
 }
 
-.flow-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(-45deg, #f6d365, #fda085, #f6d365, #fda085);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-    color: white;
-    margin-top: 50px;
-}
-
-.flow-title {
-    font-size: 3em;
-    animation: slideInFromTop 2s;
-    color: white;
-}
-
-.flow-subtitle {
-    font-size: 1.5em;
-    /* Increase font size */
-    animation: slideInFromBottom 2s;
-    color: white;
-}
-
-.flow-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    animation: pulse 2s infinite;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.flow-button:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 @keyframes slideInFromTop {
     0% {
         transform: translateY(-100%);
@@ -86,7 +43,49 @@
 }
 
 body {
-    background: linear-gradient(-45deg, #f6d365, #fda085, #f6d365, #fda085);
+    background: linear-gradient(141deg, #5073E7 0%, #93D2ED 51%, #5073E7 100%);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
+}
+
+.flow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(141deg, #5073E7 0%, #93D2ED 51%, #5073E7 100%);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: white;
+    margin-top: 50px;
+}
+
+.flow-title {
+    font-size: 3em;
+    animation: slideInFromTop 2s;
+    color: white;
+}
+
+.flow-subtitle {
+    font-size: 1.5em;
+    animation: slideInFromBottom 2s;
+    color: white;
+}
+
+.flow-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    animation: pulse 2s infinite;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.flow-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
