@@ -1,6 +1,11 @@
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .flow-container {
@@ -39,35 +44,55 @@
 }
 
 @keyframes slideInFromTop {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideInFromBottom {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0px rgba(68, 170, 80, 0.7); }
-    50% { box-shadow: 0 0 0 10px rgba(68, 170, 80, 0); }
-    100% { box-shadow: 0 0 0 0px rgba(68, 170, 80, 0); }
+    0% {
+        box-shadow: 0 0 0 0px rgba(68, 170, 80, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(68, 170, 80, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0px rgba(68, 170, 80, 0);
+    }
 }
 
 body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-  }
-  
-  @keyframes gradient {
+}
+
+@keyframes gradient {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
+
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
+
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
+}
