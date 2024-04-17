@@ -14,10 +14,11 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #f6d365, #fda085, #f6d365, #fda085);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     color: white;
+    margin-top: 50px;
 }
 
 .flow-title {
@@ -27,7 +28,8 @@
 }
 
 .flow-subtitle {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    /* Increase font size */
     animation: slideInFromBottom 2s;
     color: white;
 }
@@ -35,12 +37,18 @@
 .flow-button {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     animation: pulse 2s infinite;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.flow-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes slideInFromTop {
@@ -78,21 +86,7 @@
 }
 
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #f6d365, #fda085, #f6d365, #fda085);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
