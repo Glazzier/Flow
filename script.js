@@ -1,29 +1,32 @@
-/**
- * Initializes the song list container by fetching the list of songs from the music folder.
- *
- * @return {void} This function does not return anything.
- */
 window.onload = function () {
-    const songListContainer = document.getElementById('song-list-container');
-    const musicFolder = '/music/';
-
-    fetch(musicFolder)
-        .then(response => response.text())
+    fetch('songs.json')
+        .then(response => response.json())
         .then(data => {
-            const fileList = data.split('\n').filter(file => file.trim().endsWith('.mp3'));
-
-            if (fileList.length === 0) {
-                const errorMessage = document.createElement('li');
-                errorMessage.textContent = '¡El lector de música no pudo encontrar ninguna canción! ¡Nuestros DJ están buscando el vinilo perdido! 🎵';
-                songListContainer.appendChild(errorMessage);
-            } else {
-                fileList.forEach(file => {
-                    const fileName = file.split('/').pop(); // Obtener solo el nombre del archivo
-                    const listItem = document.createElement('li');
-                    listItem.textContent = fileName;
-                    songListContainer.appendChild(listItem);
-                });
-            }
+            const songListContainer = document.getElementById('song-list-container');
+            data.songs.forEach(song => {
+                const li = document.createElement('li');
+                li.textContent = song;
+                songListContainer.appendChild(li);
+            });
         })
-        .catch(error => console.error('Error al obtener la lista de canciones:', error));
+        .then(() => {
+            const songListContainer = document.getElementById("song-list-container");
+            const audioPlayer = document.getElementById("audio-player");
+            
+            // Función para reproducir una canción
+            function reproducirCancion(nombreCancion) {
+                const rutaCancion = "canciones/" + nombreCancion + ".mp3"; // Ruta a la canción
+                audioPlayer.src = rutaCancion; // Establecer la nueva fuente del reproductor de audio
+                audioPlayer.play(); // Reproducir la canción
+            }
+
+            // Agregar un evento de clic a cada elemento de la lista de canciones
+            songListContainer.addEventListener("click", function(event) {
+                const elementoClicado = event.target;
+                if (elementoClicado.tagName === "LI") {
+                    const nombreCancion = elementoClicado.textContent; // Obtener el nombre de la canción
+                    reproducirCancion(nombreCancion); // Reproducir la canción
+                }
+            });
+        });
 };
