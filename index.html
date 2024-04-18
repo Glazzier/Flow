@@ -9,8 +9,14 @@
     <div class="flow-container">
         <h1 class="flow-title">Bienvenido a Flow</h1>
         <p class="flow-subtitle">Tu música, a tu manera.</p>
-        <button class="flow-button">Empezar</button>
+        <button class="flow-button" id="redirectButton">Empezar</button>
     </div>
+
+    <script>
+        document.getElementById('redirectButton').addEventListener('click', function () {
+            window.location.href = 'flow.html';
+        });
+    </script>
 </body>
 
 </html>
