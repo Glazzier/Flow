@@ -4,7 +4,7 @@
 
 <p id="description">Flow is an open source music app that seeks to have a better user experience.</p>
 
-<p align="center"><img src="https://img.shields.io/github/languages/code-size/Glazzier/Flow" alt="shields"></p>
+<p align="center"><img src="https://img.shields.io/github/repo-size/Glazzier/Flow" alt="shields"></p>
   
   
 <h2>🧐 Features</h2>
