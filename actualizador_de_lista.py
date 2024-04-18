@@ -22,13 +22,15 @@ def listar_mp3(carpetas):
                 if archivo.endswith(".mp3"):
                     nombre_cancion = os.path.splitext(archivo)[0]
                     nombre_cancion_limpio = limpiar_nombre(nombre_cancion)
-                    if nombre_cancion_limpio not in canciones:
-                        canciones.append(nombre_cancion_limpio)
+                    # Creamos un diccionario para cada canción con las claves "title" y "filename"
+                    cancion = {"title": nombre_cancion_limpio, "filename": archivo}
+                    if cancion not in canciones:
+                        canciones.append(cancion)
+                        print(f"Se ha añadido la canción '{nombre_cancion_limpio}'.")
                     else:
                         print(f"El nombre de la canción '{nombre_cancion_limpio}' ya está en la lista.")
         else:
             print(f"La carpeta '{carpeta}' no existe.")
-    print("Archivos encontrados:", canciones)
     return canciones
 
 def generar_json(carpetas, nombre_archivo):
