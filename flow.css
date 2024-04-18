@@ -43,20 +43,22 @@ body {
     color: #8f94fb;
 }
 
+.progress-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .progress-bar {
     background-color: rgba(255, 255, 255, 0.3);
     height: 20px;
     border-radius: 10px;
-    margin-top: 40px;
-    width: 80%; /* Ajuste el ancho de la barra de progreso */
-    margin: 0 auto; /* Centrar la barra de progreso */
 }
 
 .progress {
     background-color: #fff;
     border-radius: 10px;
     height: 100%;
-    width: 0; /* Inicialmente la barra de progreso está vacía */
+    width: 0;
 }
 
 .song-list {
@@ -81,19 +83,18 @@ body {
     font-size: 18px;
     cursor: pointer;
     transition: color 0.3s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Línea divisoria entre elementos */
-    padding: 10px 0; /* Espaciado interno */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 0;
 }
 
 .song-list li:last-child {
-    border-bottom: none; /* Eliminar línea divisoria del último elemento */
+    border-bottom: none;
 }
 
 .song-list li:hover {
     color: #8f94fb;
 }
 
-/* Estilos para dispositivos móviles */
 @media screen and (max-width: 600px) {
     .player {
         width: 90%;
@@ -106,9 +107,9 @@ body {
         height: 40px;
     }
 
-    .progress-bar {
+    .progress-container {
         margin-top: 20px;
-        width: 90%; /* Ajuste el ancho de la barra de progreso para dispositivos móviles */
+        width: 90%;
     }
 
     .progress {

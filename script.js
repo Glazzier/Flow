@@ -5,7 +5,13 @@ window.onload = function () {
             const songListContainer = document.getElementById('song-list-container');
             data.songs.forEach(song => {
                 const li = document.createElement('li');
-                li.textContent = song.title;
+                const title = document.createElement('span');
+                const artist = document.createElement('span');
+                title.textContent = song.title;
+                artist.textContent = song.artist;
+                li.appendChild(title);
+                li.appendChild(document.createTextNode(' - '));
+                li.appendChild(artist);
                 li.dataset.filename = song.filename;
                 songListContainer.appendChild(li);
             });
@@ -16,6 +22,7 @@ window.onload = function () {
             const progressBar = document.querySelector(".progress");
 
             let isPlaying = false;
+            let isDragging = false;
 
             playButton.addEventListener("click", function() {
                 if (isPlaying) {
@@ -33,24 +40,50 @@ window.onload = function () {
                 progressBar.style.width = percent + "%";
             });
 
+            progressBar.addEventListener("mousedown", function(event) {
+                isDragging = true;
+                actualizarBarra(event);
+            });
+
+            document.addEventListener("mousemove", function(event) {
+                if (isDragging) {
+                    actualizarBarra(event);
+                }
+            });
+
+            document.addEventListener("mouseup", function() {
+                isDragging = false;
+            });
+
+            function actualizarBarra(event) {
+                const progressBarRect = progressBar.getBoundingClientRect();
+                const offsetX = event.clientX - progressBarRect.left;
+                const percent = Math.min(100, Math.max(0, (offsetX / progressBarRect.width) * 100));
+                progressBar.style.width = percent + "%";
+                const newTime = (percent / 100) * audioPlayer.duration;
+                audioPlayer.currentTime = newTime;
+            }
+
             const songListContainer = document.getElementById("song-list-container");
 
-            function reproducirCancion(nombreArchivo, nombreCancion) {
+            function reproducirCancion(nombreArchivo, nombreCancion, nombreArtista) {
                 const rutaCancion = "music/" + nombreArchivo;
                 audioPlayer.src = rutaCancion;
                 audioPlayer.play();
                 playButton.textContent = "⏸️";
                 isPlaying = true;
-                // Actualizar el título de la canción
                 document.querySelector(".song-title").textContent = nombreCancion;
+                document.querySelector(".artist").textContent = nombreArtista;
             }
 
             songListContainer.addEventListener("click", function(event) {
                 const elementoClicado = event.target;
-                if (elementoClicado.tagName === "LI") {
-                    const nombreArchivo = elementoClicado.dataset.filename;
-                    const nombreCancion = elementoClicado.textContent;
-                    reproducirCancion(nombreArchivo, nombreCancion);
+                if (elementoClicado.tagName === "SPAN") {
+                    const li = elementoClicado.parentNode;
+                    const nombreArchivo = li.dataset.filename;
+                    const nombreCancion = li.querySelector('span:first-child').textContent;
+                    const nombreArtista = li.querySelector('span:last-child').textContent;
+                    reproducirCancion(nombreArchivo, nombreCancion, nombreArtista);
                 }
             });
         })
