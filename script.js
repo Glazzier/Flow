@@ -24,7 +24,7 @@ window.onload = function () {
             let isPlaying = false;
             let isDragging = false;
 
-            playButton.addEventListener("click", function() {
+            playButton.addEventListener("click", function () {
                 if (isPlaying) {
                     audioPlayer.pause();
                     playButton.textContent = "▶️";
@@ -35,23 +35,23 @@ window.onload = function () {
                 isPlaying = !isPlaying;
             });
 
-            audioPlayer.addEventListener("timeupdate", function() {
+            audioPlayer.addEventListener("timeupdate", function () {
                 const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
                 progressBar.style.width = percent + "%";
             });
 
-            progressBar.addEventListener("mousedown", function(event) {
+            progressBar.addEventListener("mousedown", function (event) {
                 isDragging = true;
                 actualizarBarra(event);
             });
 
-            document.addEventListener("mousemove", function(event) {
+            document.addEventListener("mousemove", function (event) {
                 if (isDragging) {
                     actualizarBarra(event);
                 }
             });
 
-            document.addEventListener("mouseup", function() {
+            document.addEventListener("mouseup", function () {
                 isDragging = false;
             });
 
@@ -76,7 +76,7 @@ window.onload = function () {
                 document.querySelector(".artist").textContent = nombreArtista;
             }
 
-            songListContainer.addEventListener("click", function(event) {
+            songListContainer.addEventListener("click", function (event) {
                 const elementoClicado = event.target;
                 if (elementoClicado.tagName === "SPAN") {
                     const li = elementoClicado.parentNode;

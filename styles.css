@@ -53,39 +53,44 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(141deg, #5073E7 0%, #93D2ED 51%, #5073E7 100%);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
     color: white;
-    margin-top: 50px;
+    padding: 0 20px;
+    text-align: center;
 }
 
 .flow-title {
     font-size: 3em;
     animation: slideInFromTop 2s;
     color: white;
+    margin: 0;
 }
 
 .flow-subtitle {
     font-size: 1.5em;
     animation: slideInFromBottom 2s;
     color: white;
+    margin-top: 20px;
+}
+
+.flow-version {
+    font-size: 1em;
+    margin-top: 20px;
 }
 
 .flow-button {
-    display: inline-block;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 15px 30px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     animation: pulse 2s infinite;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 }
 
 .flow-button:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }

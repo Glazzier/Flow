@@ -5,9 +5,16 @@ body {
     background: linear-gradient(to bottom, #4e54c8, #8f94fb);
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
 .player {
     width: 400px;
-    margin: 100px auto;
     background-color: #4e54c8;
     border-radius: 20px;
     padding: 30px;
@@ -17,14 +24,14 @@ body {
 
 .song-title {
     color: #fff;
-    margin-bottom: 15px;
     font-size: 24px;
+    margin: 0;
 }
 
 .artist {
     color: #ccc;
-    margin-bottom: 30px;
     font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .controls button {
@@ -46,6 +53,7 @@ body {
 .progress-container {
     width: 80%;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 .progress-bar {
@@ -108,7 +116,6 @@ body {
     }
 
     .progress-container {
-        margin-top: 20px;
         width: 90%;
     }
 
